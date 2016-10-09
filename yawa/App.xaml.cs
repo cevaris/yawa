@@ -8,7 +8,7 @@ namespace yawa
 		{
 			InitializeComponent();
 
-			MainPage = new YamlMain();
+			MainPage = new WeatherOverview();
 		}
 
 		protected override void OnStart()

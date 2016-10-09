@@ -29,7 +29,7 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
-    <EmbeddedResource Include="YamlMain.xaml">
+    <EmbeddedResource Include="WeatherOverview.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -38,10 +38,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="YamlMain.xaml.cs">
-      <DependentUpon>YamlMain.xaml</DependentUpon>
+    <Compile Include="WeatherOverview.xaml.cs">
+      <DependentUpon>WeatherOverview.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\WeatherHourDetail.cs" />
+    <Compile Include="Models\WeatherHour.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

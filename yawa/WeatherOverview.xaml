@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="yawa.YamlMain" Padding="10,0,10,0">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="yawa.WeatherOverview" Padding="10,0,10,0">
 	<ContentPage.Content>
 		<ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
 			<StackLayout Spacing="0" Padding="0">
+				<!-- header -->
 				<StackLayout Orientation="Horizontal">
 					<StackLayout Orientation="Horizontal" HorizontalOptions="Start">
 						<Label Text="≡" FontSize="24" x:Name="LabelList" Margin="10,10,0,0" />
@@ -11,13 +12,15 @@
 						<Label Text="+" FontSize="24" x:Name="LabelNew" Margin="0,10,10,0" />
 					</StackLayout>
 				</StackLayout>
+				<!-- title -->
 				<Label Text="Fresno, CA" HorizontalOptions="Center" FontSize="24" x:Name="LabelCity" />
 				<StackLayout Spacing="0" Padding="-20">
 					<Label Text="999" HorizontalOptions="Center" FontSize="150" x:Name="LabelCityTemp" />
 				</StackLayout>
+				<!-- Alternate -->
 				<Label Text="Humidity: 99.99%" HorizontalOptions="Center" FontSize="16" x:Name="LabelHumidity" />
-				<Label Text="Wind: 999 mph @ NW" HorizontalOptions="Center" FontSize="16" x:Name="LabelWind" />
 				<StackLayout Padding="10" />
+				<!-- Day forcast -->
 				<ScrollView Orientation="Horizontal" HorizontalOptions="FillAndExpand">
 					<Grid ColumnSpacing="20">
 						<Grid.RowDefinitions>
@@ -43,28 +46,28 @@
 						<Label Text="00°/999°" Grid.Row="1" Grid.Column="6" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
 					</Grid>
 				</ScrollView>
-				<StackLayout Padding="10" />
-				<ScrollView Orientation="Vertical">
-					<Grid>
-						<Grid.RowDefinitions>
-							<RowDefinition Height="20" />
-						</Grid.RowDefinitions>
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="*" />
-							<ColumnDefinition Width="*" />
-							<ColumnDefinition Width="2*" />
-						</Grid.ColumnDefinitions>
-						<Label Text="12AM" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" Style="{StaticResource LabelDefault}" />
-						<Label Text="999°" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
-						<Label Text="Wind: 999 mph @ SW" Grid.Row="0" Grid.Column="2" HorizontalOptions="End" Style="{StaticResource LabelDefault}" />
-						<Label Text="1PM" Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" Style="{StaticResource LabelDefault}" />
-						<Label Text="999°" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
-						<Label Text="Wind: 999 mph @ SW" Grid.Row="1" Grid.Column="2" HorizontalOptions="End" Style="{StaticResource LabelDefault}" />
-						<Label Text="2PM" Grid.Row="2" Grid.Column="0" HorizontalOptions="Start" Style="{StaticResource LabelDefault}" />
-						<Label Text="999°" Grid.Row="2" Grid.Column="1" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
-						<Label Text="Wind: 999 mph @ SW" Grid.Row="2" Grid.Column="2" HorizontalOptions="End" Style="{StaticResource LabelDefault}" />
-					</Grid>
-				</ScrollView>
+				<!-- hour forcast -->
+				<ListView x:Name="HourListView">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<Grid Margin="0,15,0,0">
+									<Grid.RowDefinitions>
+										<RowDefinition Height="auto" />
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="*" />
+										<ColumnDefinition Width="*" />
+										<ColumnDefinition Width="2*" />
+									</Grid.ColumnDefinitions>
+									<Label Text="{Binding HourText}" Grid.Column="0" HorizontalOptions="Start" Style="{StaticResource LabelDefault}" />
+									<Label Text="{Binding TempText}" Grid.Column="1" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
+									<Label Text="{Binding WindText}" Grid.Column="2" HorizontalOptions="End" Style="{StaticResource LabelDefault}" />
+								</Grid>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
 			</StackLayout>
 		</ScrollView>
 	</ContentPage.Content>
