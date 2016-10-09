@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="yawa.YamlMain">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="yawa.YamlMain" Padding="10,0,10,0">
 	<ContentPage.Content>
-		<ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" Margin="10,0,10,0">
+		<ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
 			<StackLayout Spacing="0" Padding="0">
 				<StackLayout Orientation="Horizontal">
 					<StackLayout Orientation="Horizontal" HorizontalOptions="Start">
@@ -27,24 +27,24 @@
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="Auto" />
 						</Grid.ColumnDefinitions>
-						<Label Text="Tue" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" />
-						<Label Text="00°/99°" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" />
-						<Label Text="Wed" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" />
-						<Label Text="00°/99°" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" />
-						<Label Text="Thu" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" />
-						<Label Text="00°/99°" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" />
-						<Label Text="Fri" Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" />
-						<Label Text="00°/99°" Grid.Row="1" Grid.Column="3" HorizontalOptions="Center" />
-						<Label Text="Sat" Grid.Row="0" Grid.Column="4" HorizontalOptions="Center" />
-						<Label Text="00°/99°" Grid.Row="1" Grid.Column="4" HorizontalOptions="Center" />
-						<Label Text="Sun" Grid.Row="0" Grid.Column="5" HorizontalOptions="Center" />
-						<Label Text="00°/99°" Grid.Row="1" Grid.Column="5" HorizontalOptions="Center" />
-						<Label Text="Mon" Grid.Row="0" Grid.Column="6" HorizontalOptions="Center" />
-						<Label Text="00°/99°" Grid.Row="1" Grid.Column="6" HorizontalOptions="Center" />
+						<Label Text="Tue" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
+						<Label Text="00°/999°" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
+						<Label Text="Wed" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
+						<Label Text="00°/999°" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
+						<Label Text="Thu" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
+						<Label Text="00°/999°" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
+						<Label Text="Fri" Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
+						<Label Text="00°/999°" Grid.Row="1" Grid.Column="3" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
+						<Label Text="Sat" Grid.Row="0" Grid.Column="4" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
+						<Label Text="00°/999°" Grid.Row="1" Grid.Column="4" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
+						<Label Text="Sun" Grid.Row="0" Grid.Column="5" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
+						<Label Text="00°/999°" Grid.Row="1" Grid.Column="5" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
+						<Label Text="Mon" Grid.Row="0" Grid.Column="6" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
+						<Label Text="00°/999°" Grid.Row="1" Grid.Column="6" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
 					</Grid>
 				</ScrollView>
 				<StackLayout Padding="10" />
-				<ScrollView Orientation="Vertical" >
+				<ScrollView Orientation="Vertical">
 					<Grid>
 						<Grid.RowDefinitions>
 							<RowDefinition Height="20" />
@@ -54,15 +54,15 @@
 							<ColumnDefinition Width="*" />
 							<ColumnDefinition Width="2*" />
 						</Grid.ColumnDefinitions>
-						<Label Text="12AM" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" />
-						<Label Text="99°" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" />
-						<Label Text="Wind: 999 mph @ SW" Grid.Row="0" Grid.Column="2" HorizontalOptions="End" />
-						<Label Text="1PM" Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" />
-						<Label Text="99°" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" />
-						<Label Text="Wind: 999 mph @ SW" Grid.Row="1" Grid.Column="2" HorizontalOptions="End" />
-						<Label Text="2PM" Grid.Row="2" Grid.Column="0" HorizontalOptions="Start" />
-						<Label Text="99°" Grid.Row="2" Grid.Column="1" HorizontalOptions="Center" />
-						<Label Text="Wind: 999 mph @ SW" Grid.Row="2" Grid.Column="2" HorizontalOptions="End" />
+						<Label Text="12AM" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" Style="{StaticResource LabelDefault}" />
+						<Label Text="999°" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
+						<Label Text="Wind: 999 mph @ SW" Grid.Row="0" Grid.Column="2" HorizontalOptions="End" Style="{StaticResource LabelDefault}" />
+						<Label Text="1PM" Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" Style="{StaticResource LabelDefault}" />
+						<Label Text="999°" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
+						<Label Text="Wind: 999 mph @ SW" Grid.Row="1" Grid.Column="2" HorizontalOptions="End" Style="{StaticResource LabelDefault}" />
+						<Label Text="2PM" Grid.Row="2" Grid.Column="0" HorizontalOptions="Start" Style="{StaticResource LabelDefault}" />
+						<Label Text="999°" Grid.Row="2" Grid.Column="1" HorizontalOptions="Center" Style="{StaticResource LabelDefault}" />
+						<Label Text="Wind: 999 mph @ SW" Grid.Row="2" Grid.Column="2" HorizontalOptions="End" Style="{StaticResource LabelDefault}" />
 					</Grid>
 				</ScrollView>
 			</StackLayout>
