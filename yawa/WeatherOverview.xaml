@@ -5,10 +5,18 @@
 			<!-- header -->
 			<StackLayout Orientation="Horizontal">
 				<StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-					<Label Text="≡" FontSize="24" x:Name="LabelList" Margin="10,10,0,0" />
+					<Label Text="≡" FontSize="24" x:Name="LabelList" Margin="10,10,0,0">
+						<Label.GestureRecognizers>
+							<TapGestureRecognizer Tapped="OnTappedList" NumberOfTapsRequired="1" />
+						</Label.GestureRecognizers>
+					</Label>
 				</StackLayout>
 				<StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-					<Label Text="+" FontSize="24" x:Name="LabelNew" Margin="0,10,10,0" />
+					<Label Text="+" FontSize="24" x:Name="LabelSearch" Margin="0,10,10,0">
+						<Label.GestureRecognizers>
+							<TapGestureRecognizer Tapped="OnTappedSearch" NumberOfTapsRequired="1" />
+						</Label.GestureRecognizers>
+					</Label>
 				</StackLayout>
 			</StackLayout>
 			<!-- title -->

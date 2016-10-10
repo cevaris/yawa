@@ -15,6 +15,7 @@ namespace yawa
 		public WeatherOverview()
 		{
 			InitializeComponent();
+
 			WeatherHours = new ObservableCollection<WeatherHour> {
 				new WeatherHour
 				{
@@ -34,6 +35,12 @@ namespace yawa
 
 			HourListView.ItemsSource = WeatherHours;
 		}
-	}
 
+		void OnTapGestureRecognizerTapped(object sender, EventArgs args)
+		{
+			App.Navigation.PushAsync(new MyCustomContentPage());
+			
+		}
+
+	}
 }

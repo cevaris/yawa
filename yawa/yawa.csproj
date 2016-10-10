@@ -32,6 +32,9 @@
     <EmbeddedResource Include="WeatherOverview.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="WeatherSearch.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -42,6 +45,9 @@
       <DependentUpon>WeatherOverview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\WeatherHour.cs" />
+    <Compile Include="WeatherSearch.xaml.cs">
+      <DependentUpon>WeatherSearch.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
