@@ -20,7 +20,7 @@ namespace yawa
 		void EntryChanged(object sender, EventArgs e)
 		{
 			var text = ((Entry)sender).Text;
-			Debug.WriteLine(String.Format("completed - {0}", text));
+			Debug.WriteLine(String.Format("changed - {0}", text));
 		}
 	}
 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
 using yawa.Models;
-
+using System.Diagnostics;
 
 namespace yawa
 {
@@ -29,6 +29,7 @@ namespace yawa
 					Hour = DateTime.UtcNow.AddHours(1),
 					Temp = 999,
 					WindSpeed = 999,
+
 					WindDirection = "NW"
 				}
 			};
@@ -36,10 +37,15 @@ namespace yawa
 			HourListView.ItemsSource = WeatherHours;
 		}
 
-		void OnTapGestureRecognizerTapped(object sender, EventArgs args)
+		void OnTappedSearch(object sender, EventArgs args)
 		{
-			App.Navigation.PushAsync(new MyCustomContentPage());
-			
+			Debug.WriteLine("OnTappedSearch");
+			Navigation.PushAsync(new WeatherSearch());
+		}
+
+		void OnTappedList(object sender, EventArgs args)
+		{
+			Debug.WriteLine("OnTappedList");
 		}
 
 	}
