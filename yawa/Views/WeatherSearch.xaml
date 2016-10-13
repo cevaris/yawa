@@ -19,6 +19,15 @@
 				</Grid.ColumnDefinitions>
 				<Entry x:Name="EntrySearch" Completed="EntryCompleted" TextChanged="EntryChanged" Placeholder="Search Location" Grid.Row="1" Grid.Column="1" />
 			</Grid>
+			<ListView x:Name="SearchGeoListView">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell Tapped="GeoLocationTapped">
+							<Label Text="{Binding Name}" HorizontalOptions="StartAndExpand" Style="{StaticResource LabelDefault}" />
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

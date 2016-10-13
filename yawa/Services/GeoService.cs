@@ -14,7 +14,7 @@ namespace yawa
 
 	public interface IGeoService
 	{
-		Task<GeoLocations> Search(string address);
+		Task<GeoLocationsViewModel> Search(string address);
 	}
 
 	public class GeoService : IGeoService

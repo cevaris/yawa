@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using Newtonsoft.Json;
 
@@ -12,6 +14,11 @@ namespace yawa.Models.Geo
 
 		[JsonProperty("lng")]
 		public float Lng { get; set; }
+
+		override public string ToString()
+		{
+			return String.Format("Lat:{1} Lng{0}", Lat, Lng);
+		}
 	}
 
 	public class SouthWest
@@ -113,30 +120,43 @@ namespace yawa.Models.Geo
 		public string Name { get; set; }
 		public Location Location { get; set; }
 
+		override public string ToString()
+		{
+			return String.Format("Name:{0} Locatno:{1}", Name, Location);
+		}
 	}
 
-	public class GeoLocations
+	public class GeoLocationsViewModel : INotifyPropertyChanged
 	{
-		public readonly IList<GeoLocation> Locations = new List<GeoLocation>();
+		public ObservableCollection<GeoLocation> Locations { get; set; }
+		private GeoLocationsResults geoLocationResults;
 
-		public GeoLocations()
+		public GeoLocationsViewModel()
 		{
+			Locations = new ObservableCollection<GeoLocation>();
 		}
 
-		public GeoLocations(GeoLocationsResults geoLocationResults)
+		public GeoLocationsViewModel(GeoLocationsResults geoLocationResults)
 		{
+			Locations = new ObservableCollection<GeoLocation>();
+			this.geoLocationResults = geoLocationResults;
+
 			foreach (var result in geoLocationResults.Results)
 			{
-				Debug.WriteLine(result.FormattedAddress);
+				GeoLocation geoLocation = new GeoLocation
+				{
+					Name = result.FormattedAddress,
+					Location = result.Geometry.Location
+				};
+
+				Debug.WriteLine(geoLocation);
 				Locations.Add(
-					new GeoLocation
-					{
-						Name = result.FormattedAddress,
-						Location = result.Geometry.Location
-					}
+					geoLocation
 				);
 
 			}
 		}
+
+		public event PropertyChangedEventHandler PropertyChanged;
 	}
 }
